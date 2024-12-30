@@ -8,5 +8,10 @@
 import Foundation
 
 extension DateFormatter {
+    static var instagramPostStyle: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM dd"
+        return formatter
+    }
     
 }
