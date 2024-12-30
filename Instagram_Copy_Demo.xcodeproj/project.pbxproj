@@ -13,6 +13,7 @@
 		ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19D3BC2D20E9ED00518929 /* ContentView.swift */; };
 		ED19D3BF2D20E9EF00518929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED19D3BE2D20E9EF00518929 /* Assets.xcassets */; };
 		ED19D3C22D20E9EF00518929 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED19D3C12D20E9EF00518929 /* Preview Assets.xcassets */; };
+		ED9F15DC2D2301E9001B8997 /* PostDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		ED19D3BC2D20E9ED00518929 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED19D3BE2D20E9EF00518929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED19D3C12D20E9EF00518929 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		ED19D3B92D20E9ED00518929 /* Instagram_Copy_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				ED9F15DA2D2301E9001B8997 /* Views */,
 				C120E38E2D27F88E00510748 /* PostImageView.swift */,
 				C11E8ECA2D2120EB00E4C7A2 /* HeaderView.swift */,
 				ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */,
@@ -71,6 +74,14 @@
 				ED19D3C12D20E9EF00518929 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ED9F15DA2D2301E9001B8997 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */,
+				ED9F15DC2D2301E9001B8997 /* PostDescriptionView.swift in Sources */,
 				C11E8ECB2D2120F000E4C7A2 /* HeaderView.swift in Sources */,
 				C120E38F2D27F89500510748 /* PostImageView.swift in Sources */,
 				ED19D3BB2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift in Sources */,

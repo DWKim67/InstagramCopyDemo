@@ -10,6 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+            PostDescriptionView()
             HeaderView()
             PostImageView(images: [
                 "https://i.imgur.com/DVSDh1m.png",
