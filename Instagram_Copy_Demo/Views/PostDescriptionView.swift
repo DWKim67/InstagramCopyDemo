@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct PostDescriptionView: View {
+    
+    var username: String = "samuel97316"
+    var postDescription: String = "This is the post description to demo the action of testing expandable text. \n\n#postDescription #testForDemo"
+    @State var limitDescription: Bool = true
+    
     var body: some View {
-        Text("This is the post description view")
+        HStack (alignment: .bottom) {
+            Text("**\(username)** \(postDescription)")
+                .lineLimit(limitDescription ? 1 : nil)
+                .multilineTextAlignment(.leading)
+            if limitDescription {
+                Button(action: {
+                    limitDescription.toggle()
+                }, label: {
+                    Text("more")
+                })
+            }
+        }
+        
     }
 }
 
