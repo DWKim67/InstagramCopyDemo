@@ -15,6 +15,8 @@
 		ED7965782D23349C000E22AF /* DateFormatterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7965772D23349C000E22AF /* DateFormatterExt.swift */; };
 		ED79657A2D233FFE000E22AF /* CommentsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7965792D233FFE000E22AF /* CommentsSectionView.swift */; };
 		ED9F15DC2D2301E9001B8997 /* PostDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */; };
+		EDABA6282D26E053006CD4B6 /* InteractionsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABA6272D26E053006CD4B6 /* InteractionsBarView.swift */; };
+		EDABA62C2D26E1F1006CD4B6 /* InteractionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABA62B2D26E1F1006CD4B6 /* InteractionInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		ED7965772D23349C000E22AF /* DateFormatterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExt.swift; sourceTree = "<group>"; };
 		ED7965792D233FFE000E22AF /* CommentsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsSectionView.swift; sourceTree = "<group>"; };
 		ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDescriptionView.swift; sourceTree = "<group>"; };
+		EDABA6272D26E053006CD4B6 /* InteractionsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsBarView.swift; sourceTree = "<group>"; };
+		EDABA62B2D26E1F1006CD4B6 /* InteractionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */,
 				ED7965792D233FFE000E22AF /* CommentsSectionView.swift */,
+				EDABA6272D26E053006CD4B6 /* InteractionsBarView.swift */,
+				EDABA62B2D26E1F1006CD4B6 /* InteractionInfo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,8 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */,
+				EDABA6282D26E053006CD4B6 /* InteractionsBarView.swift in Sources */,
 				ED9F15DC2D2301E9001B8997 /* PostDescriptionView.swift in Sources */,
 				ED79657A2D233FFE000E22AF /* CommentsSectionView.swift in Sources */,
+				EDABA62C2D26E1F1006CD4B6 /* InteractionInfo.swift in Sources */,
 				C11E8ECB2D2120F000E4C7A2 /* HeaderView.swift in Sources */,
 				ED19D3BB2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift in Sources */,
 				ED7965782D23349C000E22AF /* DateFormatterExt.swift in Sources */,
