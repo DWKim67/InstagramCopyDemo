@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C11E8ECB2D2120F000E4C7A2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11E8ECA2D2120EB00E4C7A2 /* HeaderView.swift */; };
+		C120E38F2D27F89500510748 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120E38E2D27F88E00510748 /* PostImageView.swift */; };
 		ED19D3BB2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */; };
 		ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19D3BC2D20E9ED00518929 /* ContentView.swift */; };
 		ED19D3BF2D20E9EF00518929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED19D3BE2D20E9EF00518929 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		C11E8ECA2D2120EB00E4C7A2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		C120E38E2D27F88E00510748 /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 		ED19D3B72D20E9ED00518929 /* Instagram_Copy_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram_Copy_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram_Copy_DemoApp.swift; sourceTree = "<group>"; };
 		ED19D3BC2D20E9ED00518929 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		ED19D3B92D20E9ED00518929 /* Instagram_Copy_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				C120E38E2D27F88E00510748 /* PostImageView.swift */,
 				C11E8ECA2D2120EB00E4C7A2 /* HeaderView.swift */,
 				ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */,
 				ED19D3BC2D20E9ED00518929 /* ContentView.swift */,
@@ -142,6 +145,7 @@
 			files = (
 				ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */,
 				C11E8ECB2D2120F000E4C7A2 /* HeaderView.swift in Sources */,
+				C120E38F2D27F89500510748 /* PostImageView.swift in Sources */,
 				ED19D3BB2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,12 +10,14 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            HeaderView()
+            PostImageView(images: [
+                "https://i.imgur.com/DVSDh1m.png",
+                "https://i.imgur.com/h3J906Q.png",
+                "https://i.imgur.com/N5XmzyD.png"
+            ])
+            Spacer()
         }
-        .padding()
     }
 }
 
