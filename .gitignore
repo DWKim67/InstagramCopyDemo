@@ -1,3 +1,5 @@
-xcuserdata/
+# macOS system files
 .DS_Store
+
+# Xcode user-specific files
 xcuserdata/
