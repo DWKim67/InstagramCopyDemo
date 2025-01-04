@@ -63,8 +63,6 @@
 			children = (
 				ED7965762D23345A000E22AF /* Models */,
 				ED9F15DA2D2301E9001B8997 /* Views */,
-				C120E38E2D27F88E00510748 /* PostImageView.swift */,
-				C11E8ECA2D2120EB00E4C7A2 /* HeaderView.swift */,
 				ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */,
 				ED19D3BC2D20E9ED00518929 /* ContentView.swift */,
 				ED19D3BE2D20E9EF00518929 /* Assets.xcassets */,
@@ -94,6 +92,8 @@
 			children = (
 				ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */,
 				ED7965792D233FFE000E22AF /* CommentsSectionView.swift */,
+				C120E38E2D27F88E00510748 /* PostImageView.swift */,
+				C11E8ECA2D2120EB00E4C7A2 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -11,17 +11,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HeaderView()
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            PostDescriptionView()
-            HeaderView()
             PostImageView(images: [
                 "https://i.imgur.com/DVSDh1m.png",
                 "https://i.imgur.com/h3J906Q.png",
                 "https://i.imgur.com/N5XmzyD.png"
             ])
+            PostDescriptionView()
             Spacer()
         }
     }
