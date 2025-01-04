@@ -8,6 +8,7 @@ import SwiftUI
 
 struct HeaderView: View {
     @State private var isFollowing = false
+    @State private var showOptionsSheet = false
     
     var body: some View {
         HStack {
@@ -41,12 +42,111 @@ struct HeaderView: View {
                     .cornerRadius(8)
             }
             
-            Image(systemName: "ellipsis")
-                .rotationEffect(.degrees(90))
-                .foregroundColor(.black)
-                .padding(.leading, 8)
+            Button(action: {
+                showOptionsSheet = true
+            }) {
+                Image(systemName: "ellipsis")
+                    .rotationEffect(.degrees(90))
+                    .foregroundColor(.black)
+                    .padding(.leading, 8)
+            }
+            .sheet(isPresented: $showOptionsSheet) {
+                OptionsSheetView()
+            }
         }
         .padding(.horizontal)
+    }
+}
+
+struct OptionsSheetView: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack {
+                OptionButton(title: "Save", systemImage: "bookmark")
+                Divider()
+                    .frame(height: 50)
+                OptionButton(title: "QR Code", systemImage: "qrcode")
+            }
+            .frame(height: 70)
+            .background(Color(UIColor.systemGray6))
+            .cornerRadius(12)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            
+            VStack(spacing: 0) {
+                OptionRow(title: "About this account", systemImage: "person.circle")
+                Divider()
+                OptionRow(title: "Translations", systemImage: "captions.bubble")
+                Divider()
+                OptionRow(title: "Closed captions", systemImage: "rectangle.badge.checkmark")
+                Divider()
+                OptionRow(title: "Not interested", systemImage: "eye.slash")
+            }
+            .background(Color(UIColor.systemGray6))
+            .cornerRadius(12)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            
+            Button(action: {
+                // Report
+            }) {
+                HStack {
+                    Spacer()
+                    Image(systemName: "exclamationmark.triangle")
+                        .foregroundColor(.red)
+                    Text("Report")
+                        .foregroundColor(.red)
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .padding()
+                .background(Color(UIColor.systemGray6))
+                .cornerRadius(12)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+            }
+            
+            Spacer()
+        }
+        .padding(.bottom, 20)
+        .presentationDetents([.fraction(0.5)])
+        .background(Color.black.opacity(0.05))
+    }
+}
+
+struct OptionButton: View {
+    let title: String
+    let systemImage: String
+    
+    var body: some View {
+        VStack {
+            Image(systemName: systemImage)
+                .font(.system(size: 24))
+                .foregroundColor(.black)
+            Text(title)
+                .font(.caption)
+                .foregroundColor(.black)
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
+struct OptionRow: View {
+    let title: String
+    let systemImage: String
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            Image(systemName: systemImage)
+                .font(.system(size: 20))
+                .foregroundColor(.black)
+            Text(title)
+                .font(.system(size: 16))
+                .foregroundColor(.black)
+            Spacer()
+        }
+        .padding()
     }
 }
 
