@@ -11,11 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HeaderView()
-            PostImageView(images: [
-                "https://i.imgur.com/DVSDh1m.png",
-                "https://i.imgur.com/h3J906Q.png",
-                "https://i.imgur.com/N5XmzyD.png"
-            ])
+            PostImageView()
             PostDescriptionView()
             Spacer()
         }

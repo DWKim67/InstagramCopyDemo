@@ -13,6 +13,14 @@ struct PostImageView: View {
     
     let images: [String]
     
+    init(images: [String] = [
+            "https://i.imgur.com/DVSDh1m.png",
+            "https://i.imgur.com/h3J906Q.png",
+            "https://i.imgur.com/N5XmzyD.png"
+        ]) {
+            self.images = images
+        }
+    
     var body: some View {
         ZStack {
             TabView {
@@ -84,11 +92,7 @@ struct PostImageView: View {
 
 struct PostImageView_Previews: PreviewProvider {
     static var previews: some View {
-        PostImageView(images: [
-            "https://i.imgur.com/DVSDh1m.png",
-            "https://i.imgur.com/h3J906Q.png",
-            "https://i.imgur.com/N5XmzyD.png"
-        ])
+        PostImageView()
             .previewLayout(.sizeThatFits)
     }
 }
