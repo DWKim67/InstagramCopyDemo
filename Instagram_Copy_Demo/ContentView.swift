@@ -11,10 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack (spacing: 10) {
             HeaderView()
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            PostImageView()
             InteractionsBarView()
             PostDescriptionView()
         }
