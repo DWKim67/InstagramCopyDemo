@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack (spacing: 10) {
-            HeaderView()
-            PostImageView()
-            InteractionsBarView()
-            PostDescriptionView()
+        VStack {
+            VStack (spacing: 10) {
+                HeaderView()
+                PostImageView()
+                InteractionsBarView()
+                PostDescriptionView()
+            }
+            .padding()
+            Spacer()
         }
-        .padding()
+        
     }
 }
 
