@@ -9,11 +9,25 @@ import SwiftUI
 
 struct CommentsSectionView: View {
     var body: some View {
-        VStack {
-            Text("This is the comments section")
-            Text("This is the comments section")
-            Text("This is the comments section")
+        ScrollView {
+            VStack {
+                VStack (spacing: 25) {
+                    CommentView()
+                    CommentView()
+                    CommentView()
+                    CommentView()
+                    CommentView()
+                    CommentView()
+                    CommentView()
+                    CommentView()
+                    CommentView()
+                }
+                Spacer()
+            }
         }
+        .padding(.top)
+        
+        
     }
 }
 

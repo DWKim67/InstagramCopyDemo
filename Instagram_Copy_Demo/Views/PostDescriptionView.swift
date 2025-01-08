@@ -44,8 +44,23 @@ struct PostDescriptionView: View {
             .buttonStyle(.plain)
         }
         .sheet(isPresented: $shouldPresentComments, content: {
-            CommentsSectionView()
-                .presentationDetents([.large, .medium, .fraction(0.75)])
+            VStack {
+                ZStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "paperplane")
+                            .padding(.trailing, 10)
+                    }
+                    Text("Comments")
+                }
+                .padding(.top, 30)
+                Divider()
+                    .padding(.top, 10)
+                CommentsSectionView()
+                    .presentationDetents([.large, .medium, .fraction(0.75)])
+                    .padding(.top)
+            }
+            
         })
     }
 }
