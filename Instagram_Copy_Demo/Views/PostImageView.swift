@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct PostImageView: View {
-    @State private var isLiked = false // Track like status
-    @State private var showHeart = false // Control heart animation
+    @StateObject private var viewModel = PostImageViewModel()
     
     let images: [String]
     
@@ -33,7 +32,7 @@ struct PostImageView: View {
                                 .frame(maxWidth: .infinity, maxHeight: 400)
                                 .clipped()
                                 .onTapGesture(count: 2) {
-                                    handleDoubleTap()
+                                    viewModel.handleDoubleTap()
                                 }
                         } else if phase.error != nil {
                             Color.red
@@ -54,30 +53,17 @@ struct PostImageView: View {
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             .frame(height: 400)
             
-            if showHeart {
+            if viewModel.showHeart {
                 Image(systemName: "heart.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
                     .foregroundColor(.red)
-                    .opacity(showHeart ? 1 : 0)
-                    .scaleEffect(showHeart ? 1 : 0.5)
+                    .opacity(viewModel.showHeart ? 1 : 0)
+                    .scaleEffect(viewModel.showHeart ? 1 : 0.5)
             }
         }
         .gesture(DragGesture())
-    }
-    
-    private func handleDoubleTap() {
-        withAnimation(.spring()) {
-            isLiked.toggle()
-            showHeart = isLiked
-            
-            if showHeart {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                    showHeart = false
-                }
-            }
-        }
     }
 }
 
