@@ -65,15 +65,6 @@ struct PostImageView: View {
             }
         }
         .gesture(DragGesture())
-        .overlay(
-            HStack {
-                Image(systemName: isLiked ? "heart.fill" : "heart")
-                    .foregroundColor(isLiked ? .red : .black)
-                    .padding()
-                Spacer()
-            },
-            alignment: .topLeading
-        )
     }
     
     private func handleDoubleTap() {
