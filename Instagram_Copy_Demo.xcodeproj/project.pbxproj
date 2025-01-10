@@ -20,6 +20,7 @@
 		ED79657A2D233FFE000E22AF /* CommentsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7965792D233FFE000E22AF /* CommentsSectionView.swift */; };
 		ED89E0172D2D905700468E9B /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89E0162D2D905700468E9B /* CommentView.swift */; };
 		ED9F15DC2D2301E9001B8997 /* PostDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */; };
+		EDC4E9FB2D30523C0017B05F /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4E9FA2D30523C0017B05F /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		ED7965792D233FFE000E22AF /* CommentsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsSectionView.swift; sourceTree = "<group>"; };
 		ED89E0162D2D905700468E9B /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		ED9F15DB2D2301E9001B8997 /* PostDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDescriptionView.swift; sourceTree = "<group>"; };
+		EDC4E9FA2D30523C0017B05F /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		ED19D3B92D20E9ED00518929 /* Instagram_Copy_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				EDC4E9F92D3050A90017B05F /* ViewModels */,
 				ED7965762D23345A000E22AF /* Models */,
 				ED9F15DA2D2301E9001B8997 /* Views */,
 				ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */,
@@ -108,6 +111,14 @@
 				ED89E0162D2D905700468E9B /* CommentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EDC4E9F92D3050A90017B05F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4E9FA2D30523C0017B05F /* PostViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC4E9FB2D30523C0017B05F /* PostViewModel.swift in Sources */,
 				ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */,
 				8E8E68282D2B617B008CBB11 /* PostImageView.swift in Sources */,
 				8E8E68292D2B617B008CBB11 /* HeaderView.swift in Sources */,

@@ -14,6 +14,7 @@ struct PostDescriptionView: View {
     var postDescription: String = "This is the post description to demo the action of testing expandable text. \n\n#postDescription #testForDemo"
     var date: Date = Date()
     @State var shouldPresentComments: Bool = false
+    @State var comments: [Comment]
     
     @State var limitDescription: Bool = true
     
@@ -23,6 +24,7 @@ struct PostDescriptionView: View {
                 if limitDescription {
                     limitDescription.toggle()
                 } else {
+                    comments.append(Comment.createPostDescriptionComment(username: username, datePosted: date, comment: postDescription))
                     shouldPresentComments = true
                 }
             }, label: {
@@ -44,27 +46,12 @@ struct PostDescriptionView: View {
             .buttonStyle(.plain)
         }
         .sheet(isPresented: $shouldPresentComments, content: {
-            VStack {
-                ZStack {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "paperplane")
-                            .padding(.trailing, 10)
-                    }
-                    Text("Comments")
-                }
-                .padding(.top, 30)
-                Divider()
-                    .padding(.top, 10)
-                CommentsSectionView()
-                    .presentationDetents([.large, .medium, .fraction(0.75)])
-                    .padding(.top)
-            }
-            
+            CommentsSectionView(comments: comments)
+                .presentationDetents([.large, .medium, .fraction(0.75)])
         })
     }
 }
 
 #Preview {
-    PostDescriptionView()
+    PostDescriptionView(comments: [Comment(), Comment()])
 }

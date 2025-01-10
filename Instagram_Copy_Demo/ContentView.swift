@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var viewModel: PostViewModel = PostViewModel()
+
+    
     var body: some View {
         VStack {
             VStack (spacing: 10) {
                 HeaderView()
                 PostImageView()
                 InteractionsBarView()
-                PostDescriptionView()
+                PostDescriptionView(comments: viewModel.comments)
             }
             .padding()
             Spacer()
