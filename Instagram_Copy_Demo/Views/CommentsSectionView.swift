@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CommentsSectionView: View {
     
-    var comments: [Comment]
+    @State var comments: [Comment]
     
     var body: some View {
         VStack {

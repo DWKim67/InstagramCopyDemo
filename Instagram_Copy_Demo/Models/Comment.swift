@@ -8,8 +8,9 @@
 import Foundation
 
 struct Comment: Hashable {
+    let id = UUID()
     var username: String = "JohnDoe123"
-    var datePosted: Date = Date().addingTimeInterval(-2000)
+    var datePosted: Date = Date().addingTimeInterval(-200000)
     var comment: String = "Wow, that looks cool!"
     var imageName: String = "person.crop.circle"
     var isLiked: Bool = false
@@ -23,7 +24,6 @@ struct Comment: Hashable {
     
     mutating func toggleLike() {
         isLiked.toggle()
-        print(self)
     }
     
     static func createPostDescriptionComment(username: String, datePosted: Date = Date(), comment: String) -> Comment {

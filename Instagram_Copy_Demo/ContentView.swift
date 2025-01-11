@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @State var viewModel: PostViewModel = PostViewModel()
-
     
     var body: some View {
         VStack {
@@ -18,12 +17,11 @@ struct ContentView: View {
                 HeaderView()
                 PostImageView()
                 InteractionsBarView()
-                PostDescriptionView(comments: viewModel.comments)
+                PostDescriptionView(viewModel: $viewModel)
             }
             .padding()
             Spacer()
         }
-        
     }
 }
 

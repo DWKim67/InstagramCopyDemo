@@ -14,7 +14,7 @@ struct PostDescriptionView: View {
     var postDescription: String = "This is the post description to demo the action of testing expandable text. \n\n#postDescription #testForDemo"
     var date: Date = Date()
     @State var shouldPresentComments: Bool = false
-    @State var comments: [Comment]
+    @Binding var viewModel: PostViewModel
     
     @State var limitDescription: Bool = true
     
@@ -24,7 +24,9 @@ struct PostDescriptionView: View {
                 if limitDescription {
                     limitDescription.toggle()
                 } else {
-                    comments.append(Comment.createPostDescriptionComment(username: username, datePosted: date, comment: postDescription))
+                    let postComment = Comment.createPostDescriptionComment(username: username, datePosted: date, comment: postDescription)
+                    viewModel.setDescriptionComment(as: postComment)
+                    viewModel.showDescriptionComment()
                     shouldPresentComments = true
                 }
             }, label: {
@@ -33,10 +35,8 @@ struct PostDescriptionView: View {
                         Text("**\(username)** \(postDescription)")
                             .lineLimit(limitDescription ? 1 : nil)
                             .multilineTextAlignment(.leading)
-                        if limitDescription {
-                            Text("more")
-                                .foregroundStyle(Color.gray)
-                        }
+                        Text("more")
+                            .foregroundStyle(limitDescription ? Color.gray : Color.clear)
                     }
                     Text("\(DateFormatter.instagramPostStyle.string(from: date))")
                         .foregroundStyle(Color.gray)
@@ -46,12 +46,12 @@ struct PostDescriptionView: View {
             .buttonStyle(.plain)
         }
         .sheet(isPresented: $shouldPresentComments, content: {
-            CommentsSectionView(comments: comments)
+            CommentsSectionView(comments: viewModel.getComments())
                 .presentationDetents([.large, .medium, .fraction(0.75)])
         })
     }
 }
 
 #Preview {
-    PostDescriptionView(comments: [Comment(), Comment()])
+    PostDescriptionView(viewModel: .constant(PostViewModel()))
 }
