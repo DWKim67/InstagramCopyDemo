@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PostImageView: View {
-    @StateObject private var viewModel = PostImageViewModel()
+    @StateObject private var viewModel = ViewModel()
     
     let images: [String]
     
