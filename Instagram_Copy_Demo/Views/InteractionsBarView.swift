@@ -10,13 +10,14 @@ import SwiftUI
 struct InteractionsBarView: View {
     
     @State var isBookmarked: Bool = false
+    @Binding var viewModel: PostViewModel
     
     var body: some View {
         HStack {
             HStack (spacing: 14) {
-                InteractionInfo(type: .likes)
-                InteractionInfo(type: .comments)
-                InteractionInfo(type: .shares)
+                InteractionInfo(type: .likes, viewModel: viewModel)
+                InteractionInfo(type: .comments, viewModel: viewModel)
+                InteractionInfo(type: .shares, viewModel: viewModel)
             }
             Spacer()
             Button(action: {
@@ -33,5 +34,5 @@ struct InteractionsBarView: View {
 
 
 #Preview {
-    InteractionsBarView()
+    InteractionsBarView(viewModel: .constant(PostViewModel()))
 }
