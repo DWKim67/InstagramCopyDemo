@@ -7,8 +7,7 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @State private var isFollowing = false
-    @State private var showOptionsSheet = false
+    @StateObject var viewModel = PostImageViewModel()
     
     var body: some View {
         HStack {
@@ -30,27 +29,27 @@ struct HeaderView: View {
             Spacer()
             
             Button(action: {
-                isFollowing.toggle()
+                viewModel.isFollowing.toggle()
             }) {
-                Text(isFollowing ? "Following" : "Follow")
+                Text(viewModel.isFollowing ? "Following" : "Follow")
                     .font(.subheadline)
                     .fontWeight(.bold)
-                    .foregroundColor(isFollowing ? .black : .white)
+                    .foregroundColor(viewModel.isFollowing ? .black : .white)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 6)
-                    .background(isFollowing ? Color.gray.opacity(0.3) : Color.blue)
+                    .background(viewModel.isFollowing ? Color.gray.opacity(0.3) : Color.blue)
                     .cornerRadius(8)
             }
             
             Button(action: {
-                showOptionsSheet = true
+                viewModel.showOptionsSheet = true
             }) {
                 Image(systemName: "ellipsis")
                     .rotationEffect(.degrees(90))
                     .foregroundColor(.black)
                     .padding(.leading, 8)
             }
-            .sheet(isPresented: $showOptionsSheet) {
+            .sheet(isPresented: $viewModel.showOptionsSheet) {
                 OptionsSheetView()
             }
         }

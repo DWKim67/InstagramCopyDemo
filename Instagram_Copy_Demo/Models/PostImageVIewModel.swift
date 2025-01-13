@@ -10,6 +10,8 @@ import SwiftUI
 class PostImageViewModel: ObservableObject {
     @Published var isLiked = false // Track like status
     @Published var showHeart = false // Control heart animation
+    @Published var isFollowing = false // Track Follow status
+    @Published var showOptionsSheet = false
 
     func handleDoubleTap() {
         withAnimation(.spring()) {
