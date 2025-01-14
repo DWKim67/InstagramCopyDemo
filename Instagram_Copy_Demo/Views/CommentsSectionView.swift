@@ -8,15 +8,39 @@
 import SwiftUI
 
 struct CommentsSectionView: View {
+    
+    @State var comments: [Comment]
+    
     var body: some View {
         VStack {
-            Text("This is the comments section")
-            Text("This is the comments section")
-            Text("This is the comments section")
+            ZStack {
+                HStack {
+                    Spacer()
+                    Image(systemName: "paperplane")
+                        .padding(.trailing, 10)
+                }
+                Text("Comments")
+            }
+            .padding(.top, 30)
+            Divider()
+                .padding(.top, 10)
+            ScrollView {
+                VStack {
+                    VStack (spacing: 25) {
+                        ForEach(comments, id: \.self) { comment in
+                            CommentView(comment: comment)
+                        }
+                    }
+                    Spacer()
+                }
+            }
+            .padding(.top)
         }
+        
+        
     }
 }
 
 #Preview {
-    CommentsSectionView()
+    CommentsSectionView(comments: [Comment(), Comment(), Comment()])
 }
