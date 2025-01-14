@@ -35,4 +35,8 @@ class PostViewModel: ObservableObject {
         }
         return comments
     }
+    
+    func getCommentsCount() -> Int {
+        comments.count
+    }
 }

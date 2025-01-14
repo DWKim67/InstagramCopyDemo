@@ -25,8 +25,8 @@ extension InteractionInfo {
         }
     }
     
-    internal func buttonActionOnTypes(_ viewModel: PostViewModel, _ shouldSheetShow: inout Bool, for interactionType: InteractionType) {
-        switch interactionType {
+    internal func buttonActionOnTypes(_ shouldSheetShow: inout Bool) {
+        switch type {
             case .likes:
                 print("Increase the like amount")
             case .comments:
@@ -34,6 +34,17 @@ extension InteractionInfo {
                 viewModel.hideDescriptionComment()
             case .shares:
                 shouldSheetShow = true
+        }
+    }
+    
+    internal func getInteractionNumber() -> Int {
+        switch type {
+            case .likes:
+                500
+            case .comments:
+                viewModel.getCommentsCount()
+            case .shares:
+                4
         }
     }
 }

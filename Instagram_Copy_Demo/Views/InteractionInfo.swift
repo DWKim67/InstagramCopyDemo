@@ -48,13 +48,13 @@ struct InteractionInfo: View {
     var body: some View {
         HStack {
             Button(action: {
-                buttonActionOnTypes(viewModel, &shouldShowSheets, for: type)
+                buttonActionOnTypes(&shouldShowSheets)
             }, label: {
                 Image(systemName: type.imageName)
             })
             .buttonStyle(.plain)
             
-            Text("\(type.interactionNumber)")
+            Text("\(getInteractionNumber())")
         }
         .sheet(isPresented: $shouldShowSheets, content: {
             ConditionalSheetView(type: type, viewModel: viewModel)
