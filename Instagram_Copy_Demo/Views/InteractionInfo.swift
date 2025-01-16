@@ -35,21 +35,36 @@ extension InteractionInfo {
             }
         }
     }
-    
 }
+
+
 
 struct InteractionInfo: View {
     
     var type: InteractionType
+    var viewModel: PostViewModel
+    @State var shouldShowSheets: Bool = false
     
     var body: some View {
         HStack {
-            Image(systemName: type.imageName)
-            Text("\(type.interactionNumber)")
+            Button(action: {
+                buttonActionOnTypes(&shouldShowSheets)
+            }, label: {
+                Image(systemName: type.imageName)
+            })
+            .buttonStyle(.plain)
+            
+            Text("\(getInteractionNumber())")
         }
+        .sheet(isPresented: $shouldShowSheets, content: {
+            ConditionalSheetView(type: type, viewModel: viewModel)
+        })
     }
+   
 }
 
+
+
 #Preview {
-    InteractionInfo(type: .likes)
+    InteractionInfo(type: .likes, viewModel: PostViewModel())
 }
