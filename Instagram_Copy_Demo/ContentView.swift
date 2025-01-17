@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ViewModel()
-
+    @StateObject var viewModel: PostViewModel = PostViewModel()
+    
     var body: some View {
         NavigationStack {
             VStack {
                 VStack(spacing: 10) {
-                    HeaderView(viewModel: viewModel) // Pass ViewModel to HeaderView
+                    HeaderView(viewModel: viewModel)
                     PostImageView()
-                    InteractionsBarView()
-                    PostDescriptionView()
+                    InteractionsBarView(viewModel: $viewModel)
+                    PostDescriptionView(viewModel: $viewModel)
                 }
                 .padding()
                 Spacer()
@@ -25,7 +25,6 @@ struct ContentView: View {
             .navigationDestination(isPresented: $viewModel.navigateToProfile) {
                 ProfileView(viewModel: viewModel) // Navigate to ProfileView
             }
-            Spacer()
         }
     }
 }

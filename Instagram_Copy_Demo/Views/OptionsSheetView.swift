@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OptionsSheetView: View {
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: PostViewModel
 
     var body: some View {
         VStack(spacing: 0) {
@@ -108,6 +108,6 @@ struct OptionRow: View {
 
 struct OptionsSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        OptionsSheetView(viewModel: ViewModel())
+        OptionsSheetView(viewModel: PostViewModel())
     }
 }

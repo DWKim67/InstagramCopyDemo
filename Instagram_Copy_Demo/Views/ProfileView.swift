@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject var viewModel = ViewModel()
+    @ObservedObject var viewModel: PostViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -101,6 +101,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(viewModel: PostViewModel())
     }
 }

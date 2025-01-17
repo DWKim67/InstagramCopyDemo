@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: PostViewModel
 
     var body: some View {
         VStack {
@@ -60,7 +60,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(viewModel: ViewModel())
+        HeaderView(viewModel: PostViewModel())
     }
 }
 
