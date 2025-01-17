@@ -16,8 +16,8 @@ struct ContentView: View {
                 VStack(spacing: 10) {
                     HeaderView(viewModel: viewModel)
                     PostImageView()
-                    InteractionsBarView(viewModel: $viewModel)
-                    PostDescriptionView(viewModel: $viewModel)
+                    InteractionsBarView(viewModel: viewModel)
+                    PostDescriptionView(viewModel: viewModel)
                 }
                 .padding()
                 Spacer()

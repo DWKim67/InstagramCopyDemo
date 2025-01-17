@@ -9,8 +9,7 @@ import SwiftUI
 
 struct InteractionsBarView: View {
     
-    @State var isBookmarked: Bool = false
-    @Binding var viewModel: PostViewModel
+    @ObservedObject var viewModel: PostViewModel
     
     var body: some View {
         HStack {
@@ -21,10 +20,11 @@ struct InteractionsBarView: View {
             }
             Spacer()
             Button(action: {
-                isBookmarked.toggle()
-            }, label: {
-                Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-            })
+                viewModel.isBookmarked.toggle()
+            }) {
+                Image(systemName: viewModel.isBookmarked ? "bookmark.fill" : "bookmark")
+                    .foregroundColor(.primary)
+            }
             .buttonStyle(.plain)
         }
         .font(.title3)
@@ -34,5 +34,5 @@ struct InteractionsBarView: View {
 
 
 #Preview {
-    InteractionsBarView(viewModel: .constant(PostViewModel()))
+    InteractionsBarView(viewModel: PostViewModel())
 }

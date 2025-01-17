@@ -14,7 +14,7 @@ struct PostDescriptionView: View {
     var postDescription: String = "This is the post description to demo the action of testing expandable text. \n\n#postDescription #testForDemo"
     var date: Date = Date()
     @State var shouldPresentComments: Bool = false
-    @Binding var viewModel: PostViewModel
+    @ObservedObject var viewModel: PostViewModel
     
     @State var limitDescription: Bool = true
     
@@ -53,5 +53,5 @@ struct PostDescriptionView: View {
 }
 
 #Preview {
-    PostDescriptionView(viewModel: .constant(PostViewModel()))
+    PostDescriptionView(viewModel: PostViewModel())
 }

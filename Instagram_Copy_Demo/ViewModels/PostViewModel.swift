@@ -17,6 +17,7 @@ class PostViewModel: ObservableObject {
     @Published var isFollowing = false // Track Follow status
     @Published var showOptionsSheet = false // Show/hide the options sheet
     @Published var navigateToProfile = false // Navigate to ProfileView
+    @Published var isBookmarked = false // Track bookmarked status
 
     func handleDoubleTap() {
         withAnimation(.spring()) {
