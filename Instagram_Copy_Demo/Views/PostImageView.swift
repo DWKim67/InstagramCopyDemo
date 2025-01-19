@@ -9,17 +9,16 @@ import SwiftUI
 
 struct PostImageView: View {
     @StateObject private var viewModel: PostViewModel
-    
     let images: [String]
     
     init(images: [String] = [
-            "https://i.imgur.com/DVSDh1m.png",
-            "https://i.imgur.com/h3J906Q.png",
-            "https://i.imgur.com/N5XmzyD.png"
-        ]) {
-            self.images = images
-            _viewModel = StateObject(wrappedValue: PostViewModel())
-        }
+        "https://i.imgur.com/DVSDh1m.png",
+        "https://i.imgur.com/h3J906Q.png",
+        "https://i.imgur.com/N5XmzyD.png"
+    ]) {
+        self.images = images
+        _viewModel = StateObject(wrappedValue: PostViewModel())
+    }
     
     var body: some View {
         ZStack {

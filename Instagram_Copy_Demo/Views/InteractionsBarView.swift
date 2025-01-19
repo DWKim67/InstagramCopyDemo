@@ -20,9 +20,9 @@ struct InteractionsBarView: View {
             }
             Spacer()
             Button(action: {
-                viewModel.isBookmarked.toggle()
+                viewModel.toggleBookmark()
             }) {
-                Image(systemName: viewModel.isBookmarked ? "bookmark.fill" : "bookmark")
+                Image(systemName: viewModel.post.isBookmarked ? "bookmark.fill" : "bookmark")
                     .foregroundColor(.primary)
             }
             .buttonStyle(.plain)

@@ -8,21 +8,23 @@
 import SwiftUI
 
 class PostViewModel: ObservableObject {
-    
+    @Published private(set) var post = PostModel()
     private var comments: [Comment]
     private(set) var descriptionComment: Comment = Comment()
     private(set) var shouldShowDescriptionAsComment: Bool = false
-    @Published var isLiked = false // Track like status
-    @Published var showHeart = false // Control heart animation
+    
     @Published var isFollowing = false // Track Follow status
     @Published var showOptionsSheet = false // Show/hide the options sheet
     @Published var navigateToProfile = false // Navigate to ProfileView
-    @Published var isBookmarked = false // Track bookmarked status
-
+    @Published var showHeart = false
+    
+    init() {
+        comments = [Comment(), Comment(), Comment()]
+    }
+    
     func handleDoubleTap() {
-        withAnimation(.spring()) {
-            isLiked.toggle()
-            showHeart = isLiked
+            let liked = post.handleDoubleTap()
+            showHeart = liked
 
             if showHeart {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
@@ -30,10 +32,13 @@ class PostViewModel: ObservableObject {
                 }
             }
         }
+    
+    func toggleBookmark() {
+        post.isBookmarked.toggle()
     }
     
-    init() {
-        comments = [Comment(), Comment(), Comment()]
+    func toggleLike() {
+        post.isLiked.toggle()
     }
     
     func setDescriptionComment(as descriptionComment: Comment) {
