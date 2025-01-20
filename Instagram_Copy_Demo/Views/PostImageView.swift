@@ -9,21 +9,15 @@ import SwiftUI
 
 struct PostImageView: View {
     @StateObject private var viewModel: PostViewModel
-    let images: [String]
     
-    init(images: [String] = [
-        "https://i.imgur.com/DVSDh1m.png",
-        "https://i.imgur.com/h3J906Q.png",
-        "https://i.imgur.com/N5XmzyD.png"
-    ]) {
-        self.images = images
-        _viewModel = StateObject(wrappedValue: PostViewModel())
-    }
+    init(viewModel: PostViewModel = PostViewModel()) {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        }
     
     var body: some View {
         ZStack {
             TabView {
-                ForEach(images, id: \.self) { imageURL in
+                ForEach(viewModel.images, id: \.self) { imageURL in
                     AsyncImage(url: URL(string: imageURL)) { phase in
                         if let image = phase.image {
                             image
