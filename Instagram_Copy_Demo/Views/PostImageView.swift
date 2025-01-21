@@ -8,23 +8,16 @@
 import SwiftUI
 
 struct PostImageView: View {
-    @State private var isLiked = false // Track like status
-    @State private var showHeart = false // Control heart animation
+    @StateObject private var viewModel: PostViewModel
     
-    let images: [String]
-    
-    init(images: [String] = [
-            "https://i.imgur.com/DVSDh1m.png",
-            "https://i.imgur.com/h3J906Q.png",
-            "https://i.imgur.com/N5XmzyD.png"
-        ]) {
-            self.images = images
+    init(viewModel: PostViewModel = PostViewModel()) {
+            _viewModel = StateObject(wrappedValue: viewModel)
         }
     
     var body: some View {
         ZStack {
             TabView {
-                ForEach(images, id: \.self) { imageURL in
+                ForEach(viewModel.post.images, id: \.self) { imageURL in
                     AsyncImage(url: URL(string: imageURL)) { phase in
                         if let image = phase.image {
                             image
@@ -33,7 +26,7 @@ struct PostImageView: View {
                                 .frame(maxWidth: .infinity, maxHeight: 400)
                                 .clipped()
                                 .onTapGesture(count: 2) {
-                                    handleDoubleTap()
+                                    viewModel.handleDoubleTap()
                                 }
                         } else if phase.error != nil {
                             Color.red
@@ -54,39 +47,17 @@ struct PostImageView: View {
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             .frame(height: 400)
             
-            if showHeart {
+            if viewModel.showHeart {
                 Image(systemName: "heart.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
                     .foregroundColor(.red)
-                    .opacity(showHeart ? 1 : 0)
-                    .scaleEffect(showHeart ? 1 : 0.5)
+                    .opacity(viewModel.showHeart ? 1 : 0)
+                    .scaleEffect(viewModel.showHeart ? 1 : 0.5)
             }
         }
         .gesture(DragGesture())
-        .overlay(
-            HStack {
-                Image(systemName: isLiked ? "heart.fill" : "heart")
-                    .foregroundColor(isLiked ? .red : .black)
-                    .padding()
-                Spacer()
-            },
-            alignment: .topLeading
-        )
-    }
-    
-    private func handleDoubleTap() {
-        withAnimation(.spring()) {
-            isLiked.toggle()
-            showHeart = isLiked
-            
-            if showHeart {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                    showHeart = false
-                }
-            }
-        }
     }
 }
 

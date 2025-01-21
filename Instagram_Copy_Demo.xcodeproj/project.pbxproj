@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8E8E68282D2B617B008CBB11 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E68272D2B617B008CBB11 /* PostImageView.swift */; };
 		8E8E68292D2B617B008CBB11 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8E68262D2B617B008CBB11 /* HeaderView.swift */; };
+		C14227672D3A08F7006329E0 /* OptionsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14227652D3A08F7006329E0 /* OptionsSheetView.swift */; };
+		C14227682D3A08F7006329E0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14227662D3A08F7006329E0 /* ProfileView.swift */; };
+		C142276E2D3BDFA3006329E0 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C142276D2D3BDF9D006329E0 /* PostModel.swift */; };
 		ED19D3BB2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */; };
 		ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19D3BC2D20E9ED00518929 /* ContentView.swift */; };
 		ED19D3BF2D20E9EF00518929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED19D3BE2D20E9EF00518929 /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		8E8E68262D2B617B008CBB11 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8E8E68272D2B617B008CBB11 /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		C14227652D3A08F7006329E0 /* OptionsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsSheetView.swift; sourceTree = "<group>"; };
+		C14227662D3A08F7006329E0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C142276D2D3BDF9D006329E0 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		ED19D3B72D20E9ED00518929 /* Instagram_Copy_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram_Copy_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19D3BA2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram_Copy_DemoApp.swift; sourceTree = "<group>"; };
 		ED19D3BC2D20E9ED00518929 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 		ED7965762D23345A000E22AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C142276D2D3BDF9D006329E0 /* PostModel.swift */,
 				ED7965772D23349C000E22AF /* DateFormatterExt.swift */,
 				ED4DC8ED2D2F11250029C5B9 /* Comment.swift */,
 			);
@@ -104,6 +111,8 @@
 		ED9F15DA2D2301E9001B8997 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C14227652D3A08F7006329E0 /* OptionsSheetView.swift */,
+				C14227662D3A08F7006329E0 /* ProfileView.swift */,
 				8E8E68262D2B617B008CBB11 /* HeaderView.swift */,
 				ED243B482D2B686000BE07FB /* InteractionInfo.swift */,
 				ED7E1DB92D35763400B87D88 /* InteractionInfo+Ext.swift */,
@@ -195,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC4E9FB2D30523C0017B05F /* PostViewModel.swift in Sources */,
+				C142276E2D3BDFA3006329E0 /* PostModel.swift in Sources */,
 				ED19D3BD2D20E9ED00518929 /* ContentView.swift in Sources */,
 				8E8E68282D2B617B008CBB11 /* PostImageView.swift in Sources */,
 				8E8E68292D2B617B008CBB11 /* HeaderView.swift in Sources */,
@@ -203,6 +213,8 @@
 				ED243B4A2D2B686000BE07FB /* InteractionInfo.swift in Sources */,
 				ED79657A2D233FFE000E22AF /* CommentsSectionView.swift in Sources */,
 				ED19D3BB2D20E9ED00518929 /* Instagram_Copy_DemoApp.swift in Sources */,
+				C14227672D3A08F7006329E0 /* OptionsSheetView.swift in Sources */,
+				C14227682D3A08F7006329E0 /* ProfileView.swift in Sources */,
 				ED7965782D23349C000E22AF /* DateFormatterExt.swift in Sources */,
 				ED89E0172D2D905700468E9B /* CommentView.swift in Sources */,
 				ED4DC8EE2D2F11250029C5B9 /* Comment.swift in Sources */,
