@@ -17,7 +17,7 @@ struct PostImageView: View {
     var body: some View {
         ZStack {
             TabView {
-                ForEach(viewModel.images, id: \.self) { imageURL in
+                ForEach(viewModel.post.images, id: \.self) { imageURL in
                     AsyncImage(url: URL(string: imageURL)) { phase in
                         if let image = phase.image {
                             image

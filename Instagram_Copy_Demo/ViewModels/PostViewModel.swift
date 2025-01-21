@@ -17,11 +17,6 @@ class PostViewModel: ObservableObject {
     @Published var showOptionsSheet = false // Show/hide the options sheet
     @Published var navigateToProfile = false // Navigate to ProfileView
     @Published var showHeart = false
-    @Published var images: [String] = [
-            "https://i.imgur.com/DVSDh1m.png",
-            "https://i.imgur.com/h3J906Q.png",
-            "https://i.imgur.com/N5XmzyD.png"
-        ]
     
     init() {
         comments = [Comment(), Comment(), Comment()]
